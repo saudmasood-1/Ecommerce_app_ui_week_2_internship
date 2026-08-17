@@ -155,7 +155,6 @@ class _HomeScreenState extends State<HomeScreen> {
           return ListView(
             padding: EdgeInsets.all(spacing),
             children: [
-              // SEARCH
               Container(
                 height: 55,
                 width: double.infinity,
@@ -215,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                       ),
 
-                      // PAGE INDICATOR
+                      
                       Positioned(
                         bottom: 15,
                         left: 0,
@@ -252,7 +251,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
               SizedBox(height: spacing),
 
-              // FLASH SALES TITLE
               Row(
                 children: [
                   const Icon(Icons.campaign_outlined),
@@ -288,8 +286,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
               SizedBox(height: spacing + 5),
-
-              // RECOMMENDED TITLE
               const Row(
                 children: [
                   Icon(Icons.star_outline),
@@ -306,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               SizedBox(height: spacing),
 
-              // CATEGORIES
+             
               SizedBox(
                 width: double.infinity,
                 child: SingleChildScrollView(
@@ -336,7 +332,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
               SizedBox(height: spacing),
 
-              // FILTERED PRODUCTS
               buildProductGrid(
                 context,
                 products
@@ -356,7 +351,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // CATEGORY BUTTON
   Widget buildCategoryButton({
     required IconData icon,
     required String name,
@@ -408,7 +402,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // PRODUCT GRID
   Widget buildProductGrid(
       BuildContext context,
       List<Map<String, dynamic>> productList,
@@ -440,7 +433,6 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
 
-            // Responsive card size
             childAspectRatio: width < 500
                 ? 0.62
                 : width < 800
@@ -457,7 +449,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // PRODUCT CARD
   Widget buildProductCard(
       Map<String, dynamic> product,
       ) {
@@ -471,7 +462,6 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment:
         CrossAxisAlignment.start,
         children: [
-          // PRODUCT IMAGE
           Expanded(
             child: ClipRRect(
               borderRadius:
@@ -498,7 +488,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
           const SizedBox(height: 8),
 
-          // NAME
           Text(
             product["name"],
             maxLines: 1,
@@ -511,7 +500,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
           const SizedBox(height: 5),
 
-          // PRICE
           Text(
             "Rs: ${product["price"]}",
             style: const TextStyle(
@@ -523,7 +511,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
           const SizedBox(height: 5),
 
-          // SALES + RATING
           Text(
             "${product["sales"]}  ⭐ ${product["rating"]}",
             maxLines: 1,
@@ -536,7 +523,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
           const SizedBox(height: 7),
 
-          // PROGRESS
           LinearProgressIndicator(
             value: product["progress"],
             minHeight: 5,
@@ -552,7 +538,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
           const SizedBox(height: 6),
 
-          // AVAILABLE
           Text(
             product["available"],
             maxLines: 1,
